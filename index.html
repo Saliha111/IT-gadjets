@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>TASK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><center>IT Gadgets</center></h1>
+    <div class="main">
+        <div class="box1">
+            <img src="img.jpg" width="290" height="200">
+            <h3>Modern Ultrabook</h3>
+            <p>This is a modern silver laptop with a sleek <br> and lightweight design.It features a full <br> backlit keyboard.</p>
+            <h4>Price: $999</h4>
+            <button id="mu" onclick="act(id)">Add to Cart</button>
+        </div>
+
+        <div>
+            <img src="img1.jpg" width="280" height="200">
+            <h3>Wireless Earbuds</h3>
+            <p>These wireless earbuds offer a sleek and <br> compact design, providing a comfortable fit <br> for extended listening sessions.</p>
+            <h4>Price: $199</h4>
+            <button id="we" onclick="act(id)">Add to Cart</button>
+    </div>
+
+      <div>
+            <img src="img2.jpg" width="280" height="200">
+            <h3>Gaming Mouse</h3>
+            <p>This gaming mouse offers a sleek and ergonomic <br> design,providing a comfortable grip for extended <br> gaming sessions.</p>
+            <h4>Price: $79</h4>
+            <button id="gm" onclick="act(id)">Add to Cart</button>
+        </div>
+
+        <div class="box1">
+            <img src="img3.jpg" width="250" height="200">
+            <h3>Smartwatch</h3>
+            <p>This smartwatch features a sleek and modern <br> design,offering a range of health and <br> fitness tracking features.</p>
+            <h4>Price: $299</h4>
+            <button id="sw" onclick="act(id)">Add to Cart</button>
+    </div>
+
+        <div>
+            <img src="img4.jpg" width="300" height="200">
+            <h3>Wireless Keyboard</h3>
+            <p>This wireless keyboard features a sleek and slim <br> design, providing a comfortable typing experience <br> with responsive keys.</p>
+            <h4>Price: $99</h4>
+            <button id="wk" onclick="act(id)">Add to Cart</button>
+        </div>
+
+        <div>
+            <img src="img5.jpg" width="250" height="200">
+            <h3>Headphone</h3>
+            <p>These headphones offer a sleek and modern design, <br> providing immersive sound quality and a comfortable <br> fit for extended listening sessions.</p>
+            <h4>Price: $149</h4>
+            <button id="hp" onclick="act(id)">Add to Cart</button>
+        </div>
+</div>
+  <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td id="productname"></td>
+            <td id="productprice"></td>
+        </tr>
+    </table>
+
+    <h1 id="totalamount"></h1>
+
+    <script>
+        cart = [];
+        function act(id) {
+            if (id == "mu") {
+                cart.push({ name: "Modern UltraBook", price: 999 });
+            } else if (id == "we") {
+                cart.push({ name: "Wireless Earbuds", price: 199 });
+            } else if (id == "gm") {
+                cart.push({ name: "Gaming Mouse", price: 79 });
+            } else if (id == "sw") {
+                cart.push({ name: "Smartwatch", price: 299 });
+            } else if (id == "wk") {
+                cart.push({ name: "Wireless Keyboard", price: 99 });
+            } else if (id == "hp") {
+                cart.push({ name: "Headphone", price: 149 });
+            }
+
+            console.log(cart);
+            
+            productname = document.getElementById("productname");
+            productprice = document.getElementById("productprice");
+            productname.innerHTML = "";
+            productprice.innerHTML = "";
+            for (let i = 0; i < cart.length; i++) {
+                productname.innerHTML += cart[i].name + "<br>";
+                productprice.innerHTML += cart[i].price + "<br>";
+            }
+            sum = 0;
+            for (let i = 0; i < cart.length; i++) {
+                sum += cart[i].price;
+            }
+            document.getElementById("totalamount").innerHTML = "Total Amount: $" + sum;
+        }
+    </script>
+
+
+</body>
+</html>

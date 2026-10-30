@@ -1,0 +1,44 @@
+h1{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding:15px;
+    background-color: rgb(1, 44, 58);
+    color: white;
+}
+
+.main{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    margin:50px;
+}
+.box1{
+    margin-left: 100px;
+}
+h4{
+    color: rgb(1, 44, 58);
+}
+
+p{
+   text-align:center;
+}
+
+button{
+    background-color: rgb(1, 44, 58);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
